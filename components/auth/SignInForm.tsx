@@ -1,12 +1,12 @@
 "use client";
-import { useState, FormEvent } from "react";
-import { Eye, EyeOff, Loader2, CheckCircle2 } from "lucide-react";
-import Link from "next/link";
-import { FormData, FormErrors } from "../utilities/interfaces/formdata.interface";
+import { FormEvent, useState } from "react";
+import {
+  FormData,
+  FormErrors,
+} from "../utilities/interfaces/formdata.interface";
+import { CheckCircle2, Eye, EyeOff, Loader2 } from "lucide-react";
 
-
-
-export default function SignupForm() {
+export default function SignInForm() {
   const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
@@ -109,17 +109,12 @@ export default function SignupForm() {
       </div>
     );
   }
-
   return (
     <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
       <div className="mb-8">
-        <p className="text-primary text-sm font-medium mb-1">
-          Create an Account
-        </p>
+        <p className="text-primary text-sm font-medium mb-1">Sign In</p>
         <h1 className="text-3xl md:text-[2rem] font-bold text-slate-900 leading-tight">
-          Welcome to
-          <br />
-          ByteSpace
+          Welcome Back
         </h1>
       </div>
 
@@ -130,33 +125,6 @@ export default function SignupForm() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-        {/* Full Name */}
-        <div>
-          <label
-            htmlFor="fullName"
-            className="block text-sm font-medium text-slate-700 mb-1.5"
-          >
-            Full Name
-          </label>
-          <input
-            id="fullName"
-            type="text"
-            value={formData.fullName}
-            onChange={(e) => handleChange("fullName", e.target.value)}
-            placeholder="Jamie Davis"
-            className={`w-full px-4 py-3 rounded-xl border bg-white text-slate-900 placeholder:text-slate-400 transition-all
-              ${
-                errors.fullName
-                  ? "border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-100"
-                  : "border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
-              }`}
-            disabled={isLoading}
-          />
-          {errors.fullName && (
-            <p className="mt-1.5 text-xs text-red-500">{errors.fullName}</p>
-          )}
-        </div>
-
         {/* Email */}
         <div>
           <label
@@ -230,7 +198,7 @@ export default function SignupForm() {
           <button
             type="submit"
             disabled={isLoading}
-            className="py-3.5 px-6 bg-lime-400 hover:bg-lime-500 active:bg-lime-600 text-slate-900 font-semibold rounded-full transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
+            className="py-3 px-6 bg-lime-400 hover:bg-lime-500 active:bg-lime-600 text-slate-900 font-semibold rounded-full transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 shadow-sm hover:shadow-md"
           >
             {isLoading ? (
               <>
@@ -238,21 +206,93 @@ export default function SignupForm() {
                 Creating account...
               </>
             ) : (
-              "Continue"
+              "Sign In"
             )}
           </button>
         </div>
-      </form>
 
-      <p className="mt-16 text-center text-sm text-slate-500">
-        Already have an account?{" "}
-        <Link
-          href="/signin"
-          className="text-primary font-medium hover:underline underline-offset-2"
-        >
-          Login
-        </Link>
-      </p>
+        {/* Divider + Social + New user */}
+        <div className="mt-6">
+          {/* or divider */}
+          <div className="flex items-center gap-4 mb-6">
+            <div className="flex-1 h-px bg-slate-200" />
+            <span className="text-sm text-slate-400">or</span>
+            <div className="flex-1 h-px bg-slate-200" />
+          </div>
+
+          {/* Social buttons */}
+          <div className="flex items-center justify-center gap-4 my-12">
+            <button
+              type="button"
+              className="w-12 h-12 rounded-2xl border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 transition-colors shadow-sm"
+              aria-label="Sign in with Facebook"
+            >
+              {/* Facebook icon */}
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M36.6668 19.9999C36.6668 10.7952 29.2049 3.33325 20.0002 3.33325C10.7954 3.33325 3.3335 10.7952 3.3335 19.9999C3.3335 28.3187 9.42826 35.2138 17.396 36.4641V24.8176H13.1642V19.9999H17.396V16.328C17.396 12.151 19.8842 9.84366 23.6912 9.84366C25.5147 9.84366 27.422 10.1692 27.422 10.1692V14.2707H25.3204C23.25 14.2707 22.6043 15.5555 22.6043 16.8735V19.9999H27.2267L26.4878 24.8176H22.6043V36.4641C30.5721 35.2138 36.6668 28.3187 36.6668 19.9999Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              className="w-12 h-12 rounded-2xl border border-slate-200 bg-white flex items-center justify-center hover:bg-slate-50 transition-colors shadow-sm"
+              aria-label="Sign in with Google"
+            >
+              {/* Google icon */}
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M35.9585 20.3749C35.9585 19.2777 35.8613 18.236 35.6946 17.2221H20.0002V23.486H28.9863C28.5835 25.5416 27.4029 27.2777 25.6529 28.4583V32.6249H31.0141C34.1529 29.7221 35.9585 25.4444 35.9585 20.3749Z"
+                  fill="black"
+                />
+                <path
+                  d="M20.0002 9.93047C22.4585 9.93047 24.6529 10.7777 26.3891 12.4305L31.1391 7.68048C28.2641 4.98603 24.5002 3.33325 20.0002 3.33325C13.4863 3.33325 7.86127 7.08326 5.12516 12.5277L10.6529 16.8194C11.9724 12.861 15.6529 9.93047 20.0002 9.93047Z"
+                  fill="black"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M20.0002 36.6666C13.4863 36.6666 7.86127 32.9166 5.12516 27.4721L10.6529 23.1805C11.9724 27.1388 15.6529 30.0694 20.0002 30.0694C22.2502 30.0694 24.1529 29.4583 25.6529 28.4583L31.0141 32.6249C28.2641 35.1666 24.5002 36.6666 20.0002 36.6666ZM10.6529 16.8194V12.5277H5.12516L10.6529 16.8194Z"
+                  fill="black"
+                />
+                <path
+                  d="M5.12516 23.1805H10.6529C10.3057 22.1805 10.1252 21.111 10.1252 19.9999C10.1252 18.8888 10.3196 17.8194 10.6529 16.8194L5.12516 12.5277C3.98627 14.7777 3.3335 17.3055 3.3335 19.9999C3.3335 22.6944 3.98627 25.2221 5.12516 27.4721V23.1805Z"
+                  fill="black"
+                />
+                <path
+                  d="M10.6529 23.1805H5.12516V27.4721L10.6529 23.1805Z"
+                  fill="black"
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* New user link */}
+          <p className="text-center text-sm text-slate-500">
+            New user?{" "}
+            <a
+              href="/signup"
+              className="text-primary font-medium hover:underline underline-offset-2"
+            >
+              Create an account
+            </a>
+          </p>
+        </div>
+      </form>
     </div>
   );
 }
