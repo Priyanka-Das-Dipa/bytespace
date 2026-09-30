@@ -31,7 +31,7 @@ export default function HomeCreator() {
         </p>
 
         <Link
-          href="/register"
+          href="/signup"
           className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-secondary px-8 text-[15px] font-semibold text-[#0A0A0A] transition-opacity hover:opacity-90 sm:mt-10 sm:h-[52px] sm:px-10 sm:text-base"
         >
           Join as Creator

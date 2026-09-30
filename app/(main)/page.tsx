@@ -1,7 +1,10 @@
 import { CommunityTestimonials } from "@/components/landingPage/community/CommunityTestimonial";
+import CourseDiscovery from "@/components/landingPage/course/CourseDiscovery";
 import CourseCreatorSection from "@/components/landingPage/creator/CourseCreatorSection";
 import HomeCreator from "@/components/landingPage/creator/HomeCreator";
 import HeroSection from "@/components/landingPage/hero/HeroSection";
+import { LearningPaths } from "@/components/landingPage/learning/LearningPath";
+import { PartnerStrip } from "@/components/landingPage/PartnerStrip";
 
 export default function Home() {
   return (
@@ -17,6 +20,9 @@ export default function Home() {
       >
         <HeroSection />
       </div>
+      <PartnerStrip />
+      <CourseDiscovery />
+      <LearningPaths />
       <CourseCreatorSection />
       <HomeCreator />
       <CommunityTestimonials />
