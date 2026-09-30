@@ -1,7 +1,9 @@
-
+import CourseSearch from "@/components/courses/CourseSearch";
 
 export default function CoursesPage() {
   return (
-    <div>CoursesPage</div>
-  )
+    <div>
+      <CourseSearch />
+    </div>
+  );
 }
