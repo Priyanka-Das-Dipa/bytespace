@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function SignInPage() {
   return (
-    <main className="bg-primary">
+    <main className="auth-grid bg-primary">
       <div className="min-h-screen mx-auto relative overflow-hidden">
         <div className="relative z-10 min-h-screen flex flex-col max-w-7xl mx-auto px-6">
           {/* Logo – same horizontal alignment as content */}

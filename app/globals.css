@@ -51,16 +51,6 @@ body {
     
 }
 
-.creator-cta-lime {
-  filter: sepia(1) saturate(20) hue-rotate(21deg) brightness(0.88)
-    contrast(1.08);
-}
-
-.creator-cta-white {
-  filter: grayscale(1) brightness(2.8);
-}
-
-
 .auth-grid {
   background-image:
     linear-gradient(rgb(71 130 238 / 52%) 1px, transparent 1px),
