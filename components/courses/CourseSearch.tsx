@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import { courses } from "../utilities/data/courseData";
 import { FilterButton, PaginationArrow } from "./FilterPagination";
 import CourseCard from "../landingPage/course/CourseCard";
+import Link from "next/link";
 
 const assetRoot = "/images";
 
@@ -124,7 +125,10 @@ export default function CourseSearch() {
         </div>
       </section>
 
-      <section className="bg-white px-1 sm:px-6 pb-[72px] pt-[72px]" id="courses">
+      <section
+        className="bg-white px-1 sm:px-6 pb-[72px] pt-[72px]"
+        id="courses"
+      >
         <div className="mx-auto max-w-[1200px]">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex flex-wrap gap-4">
@@ -172,7 +176,9 @@ export default function CourseSearch() {
           {visibleCourses.length > 0 ? (
             <div className="mt-20 grid justify-items-center gap-10 md:grid-cols-2 lg:grid-cols-3">
               {visibleCourses.map((course) => (
-                <CourseCard course={course} key={course.id} />
+                <Link key={course.id} href={`/courses/${course.id}`}>
+                  <CourseCard course={course} key={course.id} />
+                </Link>
               ))}
             </div>
           ) : (
