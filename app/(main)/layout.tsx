@@ -1,5 +1,5 @@
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/Navbar";
+import { Navbar } from "@/components/layout/Navbar";
 
 export default function MainLayout({
   children,
@@ -9,7 +9,6 @@ export default function MainLayout({
   return (
     <>
       <Navbar />
-
       <main className="flex-1">{children}</main>
       <Footer />
     </>
