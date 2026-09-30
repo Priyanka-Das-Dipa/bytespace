@@ -1,51 +1,51 @@
+import Footer from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import Link from "next/link";
-// update path to your Navbar
+
+const gridBackground = {
+  backgroundImage:
+    "linear-gradient(rgba(71, 130, 238, 0.52) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 130, 238, 0.52) 1px, transparent 1px)",
+  backgroundPosition: "0 -118px",
+  backgroundSize: "120px 120px",
+};
 
 export default function NotFound() {
   return (
-    <div
-      className="relative flex min-h-screen flex-col bg-primary text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(rgba(71, 130, 238, 0.52) 1px, transparent 1px), linear-gradient(90deg, rgba(71, 130, 238, 0.52) 1px, transparent 1px)",
-        backgroundSize: "120px 120px",
-      }}
-    >
+    <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <main className="flex flex-1 flex-col items-center justify-center px-5 pb-20 pt-10 text-center">
-        {/* Big 404 */}
-        <h1
-          className="font-heading text-[120px] font-bold leading-none tracking-[-0.04em] sm:text-[160px] md:text-[200px] lg:text-[240px]"
-          style={{
-            background: "linear-gradient(180deg, #E8FF4A 0%, #B8E000 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
-          }}
-        >
-          404
-        </h1>
+      <main
+        className="relative min-h-[650px] overflow-hidden bg-primary px-6 text-center text-white lg:h-[840px] lg:min-h-0 lg:px-0"
+        style={gridBackground}
+      >
+        <div className="relative mx-auto h-full max-w-[1200px]">
+          <p
+            aria-hidden="true"
+            className="pointer-events-none absolute left-1/2 top-14 -translate-x-1/2 select-none bg-[linear-gradient(180deg,#bdff00_0%,#bdff00_42%,rgba(189,255,0,0.72)_62%,rgba(13,69,235,0)_100%)] bg-clip-text font-heading text-[190px] font-semibold leading-none tracking-[-0.01em] text-transparent sm:text-[300px] lg:text-[480px]"
+          >
+            404
+          </p>
 
-        {/* Message */}
-        <h2 className="mt-2 max-w-[600px] font-heading text-[28px] font-bold leading-[1.2] tracking-[-0.03em] text-white sm:text-[36px] md:text-[44px]">
-          The page you are looking
-          <br className="hidden sm:block" /> for doesn&apos;t exist
-        </h2>
+          <div className="relative z-10 mx-auto flex max-w-[936px] flex-col items-center pt-[245px] sm:pt-[355px] lg:pt-[402px]">
+            <h1 className="font-heading text-[40px] font-semibold leading-[1.2] tracking-[-0.04em] sm:text-[56px] lg:text-[72px]">
+              The page you are looking
+              <span className="block">for doesn&apos;t exist</span>
+            </h1>
 
-        <p className="mt-4 max-w-[400px] text-[14px] leading-relaxed text-white/70 sm:text-[15px]">
-          Try to use a correct url or go back to homepage to start again
-        </p>
+            <p className="mt-8 text-body-m text-white/90 sm:text-body-l">
+              Try to use a correct url or go back to homepage to start again
+            </p>
 
-        {/* CTA */}
-        <Link
-          href="/"
-          className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-secondary px-8 text-[15px] font-semibold text-[#0A0A0A] transition-opacity hover:opacity-90 sm:h-[52px] sm:px-10"
-        >
-          Back to Home
-        </Link>
+            <Link
+              className="mt-8 inline-flex h-[46px] items-center justify-center rounded-full bg-secondary px-6 text-label-m font-medium text-shuttle-gray-950 transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white text-[#242528]"
+              href="/"
+            >
+              Back to Home
+            </Link>
+          </div>
+        </div>
       </main>
+      <Footer />
     </div>
   );
 }

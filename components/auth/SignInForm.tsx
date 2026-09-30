@@ -85,7 +85,7 @@ export default function SignInForm() {
 
   if (isSuccess) {
     return (
-      <div className="w-full max-w-xl bg-white rounded-3xl shadow-2xl p-8 md:p-10 text-center">
+      <div className="w-full sm:w-[560px] bg-white rounded-3xl shadow-2xl p-8 md:p-10 text-center">
         <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-5">
           <CheckCircle2 className="w-9 h-9 text-emerald-600" />
         </div>
@@ -110,7 +110,7 @@ export default function SignInForm() {
     );
   }
   return (
-    <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+    <div className="w-full max-w-2xl bg-white rounded-3xl shadow-2xl p-8 md:p-10">
       <div className="mb-8">
         <p className="text-primary text-sm font-medium mb-1">Sign In</p>
         <h1 className="text-3xl md:text-[2rem] font-bold text-slate-900 leading-tight">
@@ -264,8 +264,8 @@ export default function SignInForm() {
                   fill="black"
                 />
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M20.0002 36.6666C13.4863 36.6666 7.86127 32.9166 5.12516 27.4721L10.6529 23.1805C11.9724 27.1388 15.6529 30.0694 20.0002 30.0694C22.2502 30.0694 24.1529 29.4583 25.6529 28.4583L31.0141 32.6249C28.2641 35.1666 24.5002 36.6666 20.0002 36.6666ZM10.6529 16.8194V12.5277H5.12516L10.6529 16.8194Z"
                   fill="black"
                 />

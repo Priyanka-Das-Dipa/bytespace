@@ -2,9 +2,10 @@
 import { useState, FormEvent } from "react";
 import { Eye, EyeOff, Loader2, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
-import { FormData, FormErrors } from "../utilities/interfaces/formdata.interface";
-
-
+import {
+  FormData,
+  FormErrors,
+} from "../utilities/interfaces/formdata.interface";
 
 export default function SignupForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -111,7 +112,7 @@ export default function SignupForm() {
   }
 
   return (
-    <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 md:p-10">
+    <div className="w-full sm:w-[560px] bg-white rounded-3xl shadow-2xl p-8 md:p-10">
       <div className="mb-8">
         <p className="text-primary text-sm font-medium mb-1">
           Create an Account
