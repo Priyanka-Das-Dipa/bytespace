@@ -6,15 +6,15 @@ export default function SignupPage() {
   return (
     <main className="bg-primary auth-grid">
       <div className="min-h-screen mx-auto relative overflow-hidden">
-        <div className="relative z-10 min-h-screen flex flex-col max-w-7xl mx-auto px-6">
+        <div className="relative z-10 min-h-screen flex flex-col max-w-6xl mx-auto px-6">
           {/* Logo – same horizontal alignment as content */}
-          <div className="pt-6 lg:py-10">
+          <div className="pt-6 lg:py-8">
             <Link href="/" className="inline-block">
               <Image
                 src="/images/logo2.svg"
                 alt="ByteSpace"
-                width={50}
-                height={50}
+                width={40}
+                height={40}
                 className="object-cover"
               />
             </Link>
