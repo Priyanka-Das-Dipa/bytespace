@@ -7,11 +7,11 @@ export function CommunityTestimonials() {
   return (
     <section
       aria-labelledby="community-heading"
-      className="relative overflow-hidden bg-[#FAFAFA] text-[#4F4F4F]"
+      className="relative overflow-hidden testimonials-background border-b border-[#CED0D3] text-[#4F4F4F]"
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-wash"
+        className="pointer-events-none absolute inset-0 "
       />
 
       <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">

@@ -1,4 +1,6 @@
 import { CommunityTestimonials } from "@/components/landingPage/community/CommunityTestimonial";
+import CourseCreatorSection from "@/components/landingPage/creator/CourseCreatorSection";
+import HomeCreator from "@/components/landingPage/creator/HomeCreator";
 import HeroSection from "@/components/landingPage/hero/HeroSection";
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
       >
         <HeroSection />
       </div>
+      <CourseCreatorSection />
+      <HomeCreator />
       <CommunityTestimonials />
     </>
   );
